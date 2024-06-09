@@ -5,7 +5,9 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DropdownController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\RulesController;
-
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\MstAssetController;
+use App\Http\Controllers\LoanFormController;
 
 
 /*
@@ -27,7 +29,6 @@ Route::middleware(['auth'])->group(function () {
     //Home Controller
     Route::get('/home', [HomeController::class, 'index'])->name('home');
 
-
     //Dropdown Controller
      Route::get('/dropdown', [DropdownController::class, 'index'])->middleware(['checkRole:IT']);
      Route::post('/dropdown/store', [DropdownController::class, 'store'])->middleware(['checkRole:IT']);
@@ -47,6 +48,18 @@ Route::middleware(['auth'])->group(function () {
      Route::patch('/user/update/{user}', [UserController::class, 'update'])->middleware(['checkRole:IT']);
      Route::get('/user/revoke/{user}', [UserController::class, 'revoke'])->middleware(['checkRole:IT']);
      Route::get('/user/access/{user}', [UserController::class, 'access'])->middleware(['checkRole:IT']);
+
+     //form loan
+     Route::get('/form', [LoanFormController::class, 'index'])->middleware(['checkRole:IT']);
+     Route::post('/form/store', [LoanFormController::class, 'store'])->middleware(['checkRole:IT']);
+
+
+     //mst_asset
+     Route::get('/mst/asset', [MstAssetController::class, 'index'])->middleware(['checkRole:IT']);
+     Route::post('/mst/store', [MstAssetController::class, 'store'])->middleware(['checkRole:IT']);
+     Route::post('/mst/update/{id}', [MstAssetController::class, 'update'])->middleware(['checkRole:IT']);
+     Route::post('/mst/delete/{id}', [MstAssetController::class, 'delete'])->middleware(['checkRole:IT']);
+
 
 
 });

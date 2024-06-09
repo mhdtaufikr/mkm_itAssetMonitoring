@@ -9,9 +9,9 @@
                     <div style="margin-left: -2px" class="nav-link-icon"><i class="fas fa-home"></i></div>
                     Home
                 </a>
-                <a class="nav-link" href="{{url('/checksheet')}}">
+                <a class="nav-link" href="{{url('/form')}}">
                     <div class="nav-link-icon"><i class="fas fa-clipboard-list"></i></div>
-                    Checksheet
+                    Loan Form
                 </a>
                  <!-- Sidenav Menu Heading (Master)-->
                  <div class="sidenav-menu-heading">Master</div>
@@ -23,16 +23,7 @@
                  </a>
                  <div class="collapse" id="collapsemaster" data-bs-parent="#accordionSidenav">
                     <nav class="sidenav-menu-nested nav">
-                        <a class="nav-link" href="{{url('/mst/section')}}">Section</a>
-                     </nav>
-                     <nav class="sidenav-menu-nested nav">
-                        <a class="nav-link" href="{{url('/mst/shop')}}">Shop</a>
-                     </nav>
-                     <nav class="sidenav-menu-nested nav">
-                        <a class="nav-link" href="{{url('/mst/model')}}">Model</a>
-                     </nav>
-                     <nav class="sidenav-menu-nested nav">
-                        <a class="nav-link" href="{{url('/mst/downtime')}}">Downtime Cause</a>
+                        <a class="nav-link" href="{{url('/mst/asset')}}">Asset</a>
                      </nav>
                  </div>
                 @if(\Auth::user()->role === 'IT')
